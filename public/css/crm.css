@@ -1,0 +1,69 @@
+/* CRM styles shared by every page (on top of the admin template's style.css). */
+
+/* Status pills */
+.badge-status { padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; white-space: nowrap; }
+.status-Won { background: #dcf5e6; color: #1d8a4a; }
+.status-Lost { background: #fbe1e1; color: #b3261e; }
+.status-In-Process { background: #e2ecff; color: #2454b8; }
+.status-Not-Responding { background: #f0f0f0; color: #666; }
+.status-Active { background: #dcf5e6; color: #1d8a4a; }
+.status-Inactive { background: #f0f0f0; color: #666; }
+
+/* Agent panel: leads the agent has not touched yet */
+.lead-row-new { background: #fff8e6; }
+
+/* Notes modal */
+.note-item { border-bottom: 1px solid #eee; padding: 10px 0; }
+.note-item:last-child { border-bottom: none; }
+.note-meta { font-size: 0.8rem; color: #888; }
+.note-meta strong { font-weight: 700; color: #605f5f; }
+.notes-list { max-height: 340px; overflow-y: auto; }
+
+/* List tables: fixed column widths (set on each <th>), long text cut with an ellipsis */
+.crm-table { table-layout: fixed; width: 100%; }
+.crm-table th, .crm-table td { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.crm-table th:first-child, .crm-table td:first-child { overflow: visible; text-overflow: clip; }
+.crm-table td.contact-cell { white-space: normal; }
+.crm-table td.contact-cell div { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.title-header.option-title { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; }
+.title-header.option-title .btn { margin-left: auto; }
+.table-responsive.table-product { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.theme-table { min-width: 760px; }
+.theme-table th, .theme-table td { white-space: nowrap; }
+
+/* form-control strips the native select arrow, so draw our own */
+select.form-control {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23555555' d='M6 9l6 7 6-7z'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 20px 20px !important;
+    padding-right: 38px !important;
+}
+
+/* Logout modal: the Yes button is a form submit */
+.button-box form { display: inline; }
+
+/* Sign-in, forgot and reset password pages */
+.auth-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f5f6f8; }
+.auth-wrapper { width: 100%; max-width: 420px; padding: 1rem; }
+.auth-card { border: none; border-radius: 12px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); }
+.auth-logo { text-align: center; margin-bottom: 1.5rem; }
+.auth-logo img { max-height: 50px; }
+.password-field { position: relative; }
+.password-field .toggle-password { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #999; }
+.forgot-password-link { text-align: right; margin-bottom: 1rem; }
+
+@media (max-width: 767px) {
+    .card-body { padding: 16px; }
+    .title-header.option-title { align-items: flex-start; flex-direction: column; }
+    .title-header.option-title .btn { width: 100%; justify-content: center; margin-left: 0; }
+    #searchForm > div { width: 100%; max-width: 100%; flex: 0 0 100%; }
+    .table-responsive.table-product { margin: 0 -4px; }
+    .theme-table { min-width: 760px; table-layout: auto !important; }
+    .pagination { justify-content: flex-start; flex-wrap: wrap; row-gap: 8px; gap: 6px; margin-top: 10px; }
+    .pagination-bar { flex-direction: column; align-items: flex-start !important; gap: 8px; }
+}
